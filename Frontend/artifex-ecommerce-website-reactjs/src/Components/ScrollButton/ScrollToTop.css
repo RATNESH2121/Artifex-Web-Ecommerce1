@@ -1,0 +1,32 @@
+
+.top-to-btm {
+  position: relative;
+  cursor: pointer;
+}
+
+.iconStyle {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 999;
+  width: 46px;
+  height: 46px;
+  background: var(--gold-bg-grad);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(201, 168, 76, 0.3);
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.iconStyle:hover {
+  background: var(--gold-bg-grad-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(201, 168, 76, 0.4);
+}
+
+.iconStyle svg {
+  color: #0a0a0a !important;
+}

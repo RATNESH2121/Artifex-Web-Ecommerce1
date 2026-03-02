@@ -1,0 +1,219 @@
+
+
+.dealTimerSection {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 560px;
+  overflow: hidden;
+  background: var(--bg-surface);
+  transition: background 0.35s ease;
+}
+
+.dealTimerBgImage {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 8s ease;
+}
+
+.dealTimerSection:hover .dealTimerBgImage {
+  transform: scale(1.04);
+}
+
+.dealTimerOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right,
+      rgba(10, 10, 10, 0.95) 0%,
+      rgba(10, 10, 10, 0.85) 40%,
+      rgba(10, 10, 10, 0.4) 100%);
+  transition: background 0.35s ease;
+}
+
+[data-theme="light"] .dealTimerOverlay {
+  background: linear-gradient(to right,
+      rgba(248, 246, 242, 0.95) 0%,
+      rgba(248, 246, 242, 0.85) 40%,
+      rgba(248, 246, 242, 0.4) 100%);
+}
+
+.dealTimerContent {
+  position: relative;
+  z-index: 1;
+  padding: 80px 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 600px;
+}
+
+.dealTimerLabel {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.dealTimerLabel::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.dealTimerContent h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.dealTimerContent h2 strong {
+  font-weight: 700;
+  font-style: normal;
+  background: var(--gold-text-grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dealTimerContent p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 400px;
+}
+
+
+.countdownTimer {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.timerUnit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.timerDigit {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 52px;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-gold);
+  backdrop-filter: blur(10px);
+  min-width: 80px;
+  text-align: center;
+  padding: 10px 8px;
+  line-height: 1;
+}
+
+[data-theme="light"] .timerDigit {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.timerLabel {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+}
+
+.timerSep {
+  font-size: 36px;
+  color: var(--gold);
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+
+.dealTimerCTA {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.dealTimerCTA a {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.dealTimerCTA .primaryCTA {
+  background: var(--gold-bg-grad);
+  color: var(--bg-primary);
+}
+
+.dealTimerCTA .primaryCTA:hover {
+  background: var(--gold-bg-grad-hover);
+}
+
+.dealTimerCTA .secondaryCTA {
+  border: 1px solid var(--border-gold);
+  color: var(--text-primary);
+}
+
+.dealTimerCTA .secondaryCTA:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+@media screen and (max-width: 1210px) {
+  .dealTimerContent {
+    padding: 60px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dealTimerContent {
+    padding: 40px;
+  }
+
+  .timerDigit {
+    font-size: 40px;
+    min-width: 60px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .dealTimerSection {
+    min-height: auto;
+  }
+
+  .dealTimerContent {
+    padding: 48px 20px;
+  }
+
+  .countdownTimer {
+    gap: 10px;
+  }
+
+  .timerDigit {
+    font-size: 32px;
+    min-width: 48px;
+    padding: 8px 4px;
+  }
+}

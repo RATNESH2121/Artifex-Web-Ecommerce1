@@ -1,0 +1,261 @@
+
+
+.loginSignUpSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  min-height: 80vh;
+  background: var(--bg-primary);
+  background-image: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(201, 168, 76, 0.06) 0%, transparent 70%);
+  transition: background 0.35s ease;
+}
+
+.loginSignUpContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 44px;
+  width: 100%;
+  max-width: 520px;
+}
+
+.loginSignUpContainer::before {
+  content: 'ARTIFEX';
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 13px;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 8px;
+  color: var(--gold);
+}
+
+
+.loginSignUpTabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.loginSignUpTabs p {
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  position: relative;
+  transition: color 0.3s ease;
+  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+}
+
+.loginSignUpTabs p:hover {
+  color: var(--text-secondary);
+}
+
+.loginSignUpTabs p.active {
+  color: var(--gold);
+}
+
+.loginSignUpTabs p.active::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+}
+
+.loginSignUpTabs p:not(.active)::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--border-gold);
+  transition: width 0.25s ease;
+}
+
+.loginSignUpTabs p:not(.active):hover::after {
+  width: 100%;
+}
+
+
+.loginSignUpTabsContentLogin form,
+.loginSignUpTabsContentRegister form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 440px;
+}
+
+.loginSignUpTabsContentLogin form input,
+.loginSignUpTabsContentRegister input {
+  padding: 16px 20px;
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  outline: none;
+  color: var(--input-color);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  transition: border-color 0.3s ease, background 0.35s ease;
+}
+
+.loginSignUpTabsContentLogin form input::placeholder,
+.loginSignUpTabsContentRegister input::placeholder {
+  color: var(--text-placeholder);
+  font-style: italic;
+}
+
+.loginSignUpTabsContentLogin form input:focus,
+.loginSignUpTabsContentRegister input:focus {
+  border-color: var(--input-border-focus);
+}
+
+
+.loginSignUpForgetPass {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+}
+
+.loginSignUpForgetPass label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.loginSignUpForgetPass a {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.loginSignUpForgetPass a:hover {
+  color: var(--gold);
+}
+
+
+.loginSignUpForgetPass label input {
+  appearance: none;
+  border: 1px solid var(--input-border);
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  padding: 5px !important;
+  background: transparent;
+  transition: border-color 0.3s ease;
+}
+
+.loginSignUpForgetPass label input:checked {
+  border-color: var(--gold);
+}
+
+.loginSignUpForgetPass label input::after {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s ease;
+}
+
+.loginSignUpForgetPass label input:checked::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.loginSignUpForgetPass p {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+
+.loginSignUpTabsContentLogin button,
+.loginSignUpTabsContentRegister button {
+  padding: 18px;
+  background: var(--gold-bg-grad);
+  color: var(--bg-primary);
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 3px;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.3s ease;
+  margin-top: 8px;
+}
+
+.loginSignUpTabsContentLogin button:hover,
+.loginSignUpTabsContentRegister button:hover {
+  background: var(--gold-bg-grad-hover);
+}
+
+
+.loginSignUpTabsContentLoginText {
+  padding-top: 16px;
+}
+
+.loginSignUpTabsContentLoginText p {
+  font-size: 12px;
+  text-align: center;
+  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+}
+
+.loginSignUpTabsContentLoginText p span {
+  color: var(--gold);
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: var(--border-gold);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.loginSignUpTabsContentLoginText p span:hover {
+  color: var(--gold-light);
+}
+
+
+.loginSignUpTabsContentRegister p {
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.7;
+  font-family: 'Inter', sans-serif;
+}
+
+
+
+@media screen and (max-width: 450px) {
+  .loginSignUpSection {
+    padding: 60px 20px;
+  }
+
+  .loginSignUpTabsContentLogin form,
+  .loginSignUpTabsContentRegister form {
+    width: 100%;
+    max-width: 360px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+
+  .loginSignUpTabsContentLogin form,
+  .loginSignUpTabsContentRegister form {
+    width: 280px;
+  }
+}

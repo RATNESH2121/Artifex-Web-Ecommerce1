@@ -1,0 +1,207 @@
+.profileContainer {
+    max-width: 1000px;
+    margin: 120px auto 60px;
+    padding: 40px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-gold);
+    border-radius: 12px;
+    min-height: 60vh;
+}
+
+.profileHeader {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--border-gold);
+}
+
+.userIcon {
+    font-size: 80px;
+    color: var(--text-primary);
+}
+
+.userInfo h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+    color: var(--text-primary);
+}
+
+.userInfo p {
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.userRole {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--border-gold);
+    color: #000;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+
+.sectionTitle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+    color: var(--text-primary);
+}
+
+.sectionTitle h2 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.loadingText {
+    text-align: center;
+    color: var(--text-muted);
+    padding: 40px;
+}
+
+.noOrders {
+    text-align: center;
+    padding: 60px;
+    color: var(--text-muted);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.shopNowBtn {
+    margin-top: 10px;
+    padding: 10px 25px;
+    background: var(--border-gold);
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: opacity 0.3s;
+}
+
+.shopNowBtn:hover {
+    opacity: 0.8;
+}
+
+.orderList {
+    display: grid;
+    gap: 20px;
+}
+
+.orderCard {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.orderCard:hover {
+    border-color: var(--border-gold);
+    transform: translateY(-2px);
+}
+
+.orderCardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.orderId h3 {
+    font-size: 18px;
+    margin-bottom: 4px;
+    color: var(--text-primary);
+}
+
+.orderId span {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.orderStatus {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.orderStatus.pending {
+    background: #ffd700;
+    color: #000;
+}
+
+.orderStatus.shipped {
+    background: #1e90ff;
+    color: #fff;
+}
+
+.orderStatus.delivered {
+    background: #32cd32;
+    color: #fff;
+}
+
+.orderStatus.cancelled {
+    background: #ff4500;
+    color: #fff;
+}
+
+.orderItems {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.orderItem {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.orderFooter {
+    text-align: right;
+    padding-top: 15px;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.orderFooter strong {
+    color: var(--text-primary);
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.profileError {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.profileError h2 {
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+.loginBtn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--border-gold);
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .profileContainer {
+        margin: 100px 15px 40px;
+        padding: 20px;
+    }
+}

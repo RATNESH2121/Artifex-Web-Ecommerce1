@@ -1,0 +1,514 @@
+
+
+.adminContainer {
+    display: flex;
+    min-height: calc(100vh - 80px);
+    
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    transition: background 0.35s ease, color 0.35s ease;
+}
+
+
+.adminSidebar {
+    width: 220px;
+    min-height: calc(100vh - 80px);
+    background: var(--bg-surface);
+    border-right: 1px solid var(--border-default);
+    display: flex;
+    flex-direction: column;
+    padding: 28px 0 20px;
+    position: sticky;
+    top: 80px;
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+    transition: background 0.35s ease, border 0.35s ease;
+}
+
+.adminLogo {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: var(--gold);
+    padding: 0 22px;
+    margin-bottom: 36px;
+    line-height: 1.4;
+}
+
+.adminLogo span {
+    display: block;
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--text-muted);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 3px;
+}
+
+.adminNav {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 0 10px;
+    flex: 1;
+}
+
+.adminNav button {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    text-align: left;
+    padding: 11px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+    letter-spacing: 0.3px;
+    width: 100%;
+}
+
+.adminNav button:hover {
+    background: var(--bg-surface-2);
+    color: var(--text-primary);
+}
+
+.adminNav button.active {
+    background: var(--size-btn-active-bg);
+    color: var(--gold);
+    font-weight: 600;
+    border-left: 3px solid var(--gold);
+}
+
+.adminBackLink {
+    margin: 20px 22px 0;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s;
+    display: block;
+}
+
+.adminBackLink:hover {
+    color: var(--gold);
+}
+
+
+.adminMain {
+    flex: 1;
+    padding: 40px 44px;
+    background: var(--bg-primary);
+    overflow-y: auto;
+    transition: background 0.35s ease;
+}
+
+.adminHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.adminHeader h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 0.4px;
+}
+
+
+.adminPrimaryBtn {
+    padding: 10px 22px;
+    background: var(--gold-bg-grad);
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+    transition: opacity 0.2s, transform 0.15s;
+    letter-spacing: 0.3px;
+}
+
+[data-theme="light"] .adminPrimaryBtn {
+    color: #fff;
+}
+
+.adminPrimaryBtn:hover {
+    background: var(--gold-bg-grad-hover);
+    transform: translateY(-1px);
+}
+
+.adminSecondaryBtn {
+    padding: 10px 22px;
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-default);
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.adminSecondaryBtn:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+
+.adminForm {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-default);
+    border-radius: 12px;
+    padding: 26px 28px;
+    margin-bottom: 32px;
+    transition: background 0.35s ease, border 0.35s ease;
+}
+
+.adminForm h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--gold);
+}
+
+.adminFormGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.adminForm input,
+.adminForm textarea,
+.adminForm select {
+    width: 100%;
+    padding: 11px 14px;
+    background: var(--bg-input);
+    border: 1px solid var(--border-subtle);
+    border-radius: 7px;
+    color: var(--text-primary);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+.adminForm input::placeholder,
+.adminForm textarea::placeholder {
+    color: var(--text-placeholder);
+}
+
+.adminForm input:focus,
+.adminForm textarea:focus {
+    border-color: var(--gold);
+    background: var(--bg-surface-2);
+}
+
+.adminForm textarea {
+    resize: vertical;
+    margin-bottom: 14px;
+}
+
+.adminFormActions {
+    display: flex;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+
+.adminTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    background: var(--bg-surface);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: background 0.35s ease;
+}
+
+.adminTable th {
+    text-align: left;
+    padding: 14px 18px;
+    background: var(--bg-surface-2);
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    border-bottom: 1px solid var(--border-default);
+}
+
+.adminTable td {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.adminTable tr:last-child td {
+    border-bottom: none;
+}
+
+.adminTable tr:hover td {
+    background: var(--bg-surface-3);
+    color: var(--text-primary);
+}
+
+
+.adminActions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.editBtn {
+    padding: 6px 15px;
+    background: rgba(30, 144, 255, 0.12);
+    color: #4fa8ff;
+    border: 1px solid rgba(30, 144, 255, 0.25);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.editBtn:hover {
+    background: rgba(30, 144, 255, 0.22);
+    color: #7ec8ff;
+}
+
+.deleteBtn {
+    padding: 6px 15px;
+    background: rgba(255, 69, 0, 0.1);
+    color: #ff6b3d;
+    border: 1px solid rgba(255, 69, 0, 0.25);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.deleteBtn:hover {
+    background: rgba(255, 69, 0, 0.22);
+    color: #ff8c6b;
+}
+
+
+.statusBadge {
+    display: inline-block;
+    padding: 4px 11px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.roleBadge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.roleBadge.admin {
+    background: var(--size-btn-active-bg);
+    color: var(--gold);
+}
+
+.roleBadge.customer {
+    background: rgba(100, 200, 120, 0.12);
+    color: #6bcc8a;
+}
+
+
+.statusSelect {
+    padding: 6px 10px;
+    background: var(--bg-surface-2);
+    border: 1px solid var(--border-subtle);
+    border-radius: 6px;
+    color: var(--text-primary);
+    font-size: 13px;
+    cursor: pointer;
+    outline: none;
+}
+
+.statusSelect option {
+    background: var(--bg-surface);
+    color: var(--text-primary);
+}
+
+
+.adminLoading {
+    text-align: center;
+    padding: 60px;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+
+.adminEmptyState {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+
+.adminStats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.adminStatCard {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-default);
+    border-radius: 12px;
+    padding: 20px 22px;
+    transition: background 0.35s ease, border 0.35s ease;
+}
+
+.adminStatCard p {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 8px;
+}
+
+.adminStatCard h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+
+.adminImageUpload {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.adminImageLabel {
+    display: block;
+    cursor: pointer;
+    border: 2px dashed var(--border-default);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+    width: 100%;
+    max-width: 340px;
+}
+
+.adminImageLabel:hover {
+    border-color: var(--gold);
+}
+
+.adminImagePlaceholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 28px 20px;
+    gap: 6px;
+    background: var(--bg-input);
+    color: var(--text-muted);
+    min-height: 120px;
+    text-align: center;
+}
+
+.adminImagePlaceholder span {
+    font-size: 32px;
+    line-height: 1;
+}
+
+.adminImagePlaceholder p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.adminImagePlaceholder small {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.adminImagePreview {
+    display: block;
+    width: 100%;
+    max-width: 340px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.adminRemoveImageBtn {
+    background: rgba(255, 69, 0, 0.1);
+    color: #ff6b3d;
+    border: 1px solid rgba(255, 69, 0, 0.25);
+    border-radius: 6px;
+    padding: 6px 14px;
+    cursor: pointer;
+    font-size: 12px;
+    align-self: flex-start;
+    transition: background 0.2s;
+}
+
+.adminRemoveImageBtn:hover {
+    background: rgba(255, 69, 0, 0.22);
+}
+
+
+@media (max-width: 900px) {
+    .adminContainer {
+        flex-direction: column;
+    }
+
+    .adminSidebar {
+        width: 100%;
+        min-height: auto;
+        height: auto;
+        position: relative;
+        top: 0;
+        padding: 16px 10px;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        border-right: none;
+        border-bottom: 1px solid var(--border-default);
+    }
+
+    .adminLogo {
+        margin-bottom: 0;
+        padding: 0 10px;
+    }
+
+    .adminNav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0;
+        gap: 4px;
+    }
+
+    .adminMain {
+        padding: 24px 16px;
+    }
+
+    .adminFormGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .adminStats {
+        grid-template-columns: 1fr;
+    }
+}

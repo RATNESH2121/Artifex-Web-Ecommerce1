@@ -1,0 +1,126 @@
+
+
+.instagram {
+  padding: 0 120px;
+  margin: 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+}
+
+.instagram h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.instagram h2 span {
+  color: #c9a84c;
+}
+
+
+.instagram>p,
+.instagram>small {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(201, 168, 76, 0.7);
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+}
+
+.instagramTiles {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 4px;
+  width: 100%;
+}
+
+.instagramtile {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.instagramtile::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(201, 168, 76, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.instagramtile:hover::after {
+  opacity: 1;
+}
+
+.instagramtile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.4s ease;
+  filter: brightness(0.9) saturate(0.85);
+}
+
+.instagramtile:hover img {
+  transform: scale(1.06);
+  filter: brightness(0.75) saturate(0.7);
+}
+
+
+.instagramHandle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.instagramHandle:hover {
+  color: #c9a84c;
+}
+
+@media screen and (max-width: 1210px) {
+  .instagram {
+    padding: 0 60px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .instagramTiles {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 4px;
+  }
+
+  .instagram h2 {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .instagram {
+    padding: 0 20px;
+    margin: 64px 0;
+  }
+
+  .instagramTiles {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    grid-auto-rows: 110px;
+    gap: 3px;
+  }
+}

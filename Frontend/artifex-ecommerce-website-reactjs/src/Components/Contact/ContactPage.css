@@ -1,0 +1,162 @@
+
+
+.contactSection {
+  background: var(--bg-primary);
+  min-height: 70vh;
+  transition: background 0.35s ease;
+}
+
+.contactSection h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-primary);
+  padding: 60px 0 36px 120px;
+  letter-spacing: -0.5px;
+}
+
+.contactMap iframe {
+  width: 100%;
+  border: none;
+  background: var(--bg-surface-2);
+  filter: var(--map-filter);
+  transition: filter 0.35s ease;
+}
+
+.contactInfo {
+  padding: 60px 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.contactAddress {
+  display: flex;
+  gap: 60px;
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 50%;
+}
+
+.address h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 26px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+.address p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.address strong {
+  color: var(--gold);
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+
+.contactForm h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 28px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-primary);
+  margin-bottom: 28px;
+}
+
+.contactForm form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contactForm form input,
+.contactForm form textarea {
+  padding: 16px 20px;
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  color: var(--input-color);
+  outline: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  transition: border-color 0.3s ease, background 0.35s ease;
+}
+
+.contactForm form input::placeholder,
+.contactForm form textarea::placeholder {
+  color: var(--text-placeholder);
+  font-style: italic;
+}
+
+.contactForm form input:focus,
+.contactForm form textarea:focus {
+  border-color: var(--input-border-focus);
+}
+
+.contactForm form textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.contactForm form button {
+  align-self: flex-start;
+  background: var(--gold-bg-grad);
+  color: var(--bg-primary);
+  border: none;
+  padding: 16px 44px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 3px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.3s ease;
+}
+
+.contactForm form button:hover {
+  background: var(--gold-bg-grad-hover);
+}
+
+@media screen and (max-width: 1210px) {
+  .contactSection h2 {
+    padding: 50px 60px 28px;
+  }
+
+  .contactInfo {
+    padding: 40px 60px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .contactSection h2 {
+    padding: 36px 20px 20px;
+  }
+
+  .contactInfo {
+    padding: 24px 20px;
+  }
+
+  .contactAddress {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .address {
+    width: 100%;
+  }
+
+  .contactForm form button {
+    width: 100%;
+    text-align: center;
+    align-self: stretch;
+  }
+}

@@ -1,0 +1,250 @@
+
+
+.heroMain {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 120px;
+  min-height: calc(100vh - 80px);
+  background: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.35s ease;
+}
+
+
+.heroMain::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: 5%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(ellipse, rgba(201, 168, 76, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.heroMain::after {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  left: -5%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(201, 168, 76, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+
+.sectionleft {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 520px;
+  z-index: 1;
+  animation: heroFadeIn 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sectionleft>p {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sectionleft>p::before {
+  content: '';
+  display: inline-block;
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+.sectionleft h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(52px, 7vw, 96px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 0.95;
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionleft h1 strong {
+  font-weight: 700;
+  font-style: normal;
+  background: var(--gold-text-grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sectionleft>span {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  max-width: 360px;
+}
+
+
+.heroLink {
+  display: inline-flex;
+  margin-top: 8px;
+}
+
+.heroLink a {
+  text-decoration: none;
+}
+
+.heroLink h5 {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  padding: 18px 40px;
+  border: 1px solid var(--border-gold);
+  color: var(--text-primary);
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s ease, border-color 0.4s ease;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+}
+
+.heroLink h5::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gold-bg-grad);
+  transform: translateX(-101%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+
+.heroLink h5 span {
+  position: relative;
+  z-index: 1;
+}
+
+.heroLink h5:hover {
+  color: var(--bg-primary);
+  border-color: var(--gold);
+}
+
+.heroLink h5:hover::before {
+  transform: translateX(0);
+}
+
+
+.sectionright {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  z-index: 1;
+  flex: 1;
+  max-width: 600px;
+}
+
+.canvasModel {
+  width: 100% !important;
+  height: 70vh !important;
+  min-height: 400px;
+  cursor: grab;
+}
+
+.canvasModel:active {
+  cursor: grabbing;
+}
+
+
+.heroColorBtn {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 12px 20px;
+  border: 1px solid var(--border-gold);
+  backdrop-filter: blur(10px);
+}
+
+.heroColorBtn button {
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  outline: none;
+  border: 2px solid transparent;
+  position: relative;
+}
+
+.heroColorBtn button.selectedColor {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.7), 0 0 20px rgba(201, 168, 76, 0.3);
+  border: 2px solid rgba(201, 168, 76, 0.9);
+}
+
+.heroColorBtn button.selectedColor::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+}
+
+
+
+@media screen and (max-width: 1210px) {
+  .heroMain {
+    padding: 40px 60px;
+    min-height: auto;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .sectionleft {
+    max-width: 100%;
+  }
+
+  .canvasModel {
+    height: 60vw !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .heroMain {
+    padding: 32px 40px;
+  }
+
+  .sectionleft h1 {
+    font-size: 60px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .heroMain {
+    padding: 40px 20px;
+  }
+
+  .canvasModel {
+    height: 280px !important;
+  }
+}

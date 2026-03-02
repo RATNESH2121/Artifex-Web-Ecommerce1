@@ -1,0 +1,255 @@
+
+
+.collection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 12px;
+  height: 36rem;
+  padding: 0 120px;
+  margin: 80px 0;
+}
+
+
+.collectionLeft,
+.collectionTop,
+.box1,
+.box2 {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+
+.collectionLeft::after,
+.collectionTop::after,
+.box1::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.75) 0%,
+      rgba(0, 0, 0, 0.2) 50%,
+      transparent 100%);
+  transition: opacity 0.4s ease;
+}
+
+.collectionLeft:hover::after,
+.collectionTop:hover::after,
+.box1:hover::after {
+  opacity: 0.7;
+}
+
+.collectionLeft {
+  background-image: url("../../../Assets/Collection/collection1_new.png");
+  background-size: cover;
+  background-position: center center;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: transform 0.6s ease;
+}
+
+.collectionLeft>* {
+  position: relative;
+  z-index: 1;
+}
+
+
+.collectionLeft:hover,
+.collectionTop:hover,
+.box1:hover {
+  background-size: 108%;
+}
+
+.col-link {
+  display: flex;
+}
+
+.col-link a {
+  position: relative;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: 1px solid var(--border-gold);
+  background: var(--bg-surface-2);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.col-link a::after {
+  display: none;
+}
+
+.col-link a:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: var(--bg-surface-3);
+}
+
+.collectionRight {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 12px;
+}
+
+.collectionTop {
+  background-image: url("../../../Assets/Collection/collection2.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px;
+}
+
+.collectionTop>* {
+  position: relative;
+  z-index: 1;
+}
+
+.collectionBottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 12px;
+}
+
+.box1 {
+  background-image: url("../../../Assets/Collection/collection3.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+}
+
+.box1>* {
+  position: relative;
+  z-index: 1;
+}
+
+.box2 {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-gold);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 36px 30px;
+  gap: 16px;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.box2:hover {
+  border-color: var(--border-gold-focus);
+  background: var(--bg-surface-2);
+}
+
+
+.col-p {
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: #c9a84c;
+  font-family: 'Inter', sans-serif;
+}
+
+.col-h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 28px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.2;
+  text-transform: none;
+}
+
+.col-h3 span {
+  font-weight: 700;
+  font-style: normal;
+}
+
+.collection h5 {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+}
+
+.collection a {
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+
+.box2 .col-link a {
+  background: linear-gradient(135deg, #c9a84c, #a07830);
+  border-color: transparent;
+  color: #0a0a0a;
+  font-weight: 700;
+}
+
+.box2 .col-link a:hover {
+  background: linear-gradient(135deg, #e8c96e, #c9a84c);
+  border-color: transparent;
+  color: #0a0a0a;
+}
+
+
+
+@media screen and (max-width: 1210px) {
+  .collection {
+    grid-template-columns: 1fr;
+    grid-gap: 12px;
+    padding: 0 60px;
+    height: auto;
+  }
+
+  .collectionLeft {
+    background-position: top center;
+    height: 220px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .collection {
+    padding: 0 20px;
+    grid-gap: 8px;
+    margin: 48px 0;
+  }
+
+  .collectionRight {
+    grid-gap: 8px;
+    grid-template-rows: 1fr;
+  }
+
+  .collectionTop {
+    height: 180px;
+  }
+
+  .collectionBottom {
+    grid-template-columns: 1fr;
+    grid-gap: 8px;
+  }
+
+  .box1 {
+    height: 180px;
+  }
+
+  .box2 {
+    height: auto;
+    padding: 28px 20px;
+  }
+}
