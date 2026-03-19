@@ -6,7 +6,7 @@ A modern, full-stack e-commerce web application built with **React.js** on the f
 
 ## 📸 Project Overview
 
-Artifex is a feature-rich e-commerce platform that allows users to browse products, manage their shopping cart, place orders, and track their order history — all within a clean and responsive interface. Administrators can manage products, users, and orders through a custom-built admin dashboard.
+Artifex is a feature-rich e-commerce platform that allows users to browse products, manage their shopping cart, place orders, and track their order history — all within a clean and responsive interface. Administrators can manage products, users, and orders through a custom-built admin dashboard..
 
 ---
 
